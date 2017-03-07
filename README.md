@@ -1,2 +1,2 @@
 # arnoldc-interpreter
-Interpreter on an Abstract Syntax Tree for the ArnoldC language
+Interpreter written in Java based on an Abstract Syntax Tree for the ArnoldC language
