@@ -1,0 +1,20 @@
+clean:
+	rm -rf docs bin output
+build:
+	mkdir bin
+	find -name "*.java" > sources
+	javac @sources -d bin
+	rm sources
+doc:
+	find -name "*.java" > sources
+	javadoc @sources -d docs
+	rm sources
+run:
+	mkdir -p output
+	for file in `find -name '*.ac'`; do\
+		filename=$$(basename $$file); \
+		filename="$${filename%.*}"; \
+		java -cp bin Test $$file; \
+		mv out.ast output/$${filename}.ast; \
+		mv out.txt output/$${filename}.out; \
+	done
